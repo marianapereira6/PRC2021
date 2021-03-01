@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "../2%20aula/pr.dtd">
+<project>
+    <dados>
+        <key_nome>TP1</key_nome>
+        <titulo>Script de json to ttl</titulo>
+        <begin_date>22/02/21</begin_date>
+        <end_date>01/03/21</end_date>
+        <supervisor href="http://www4.di.uminho.pt/~jcr/">José Carlos Ramalho></supervisor>
+    </dados>
+    <workteam>
+        <pessoas>
+            <nome>Mariana de Oliveira Pereira</nome>
+            <numero>A81146</numero>
+            <email>a81146@alunos.uminho.pt</email>
+        </pessoas>
+    </workteam>
+    <resumo>
+        <paragrafos>Para a realização deste TPC1 começou-se por adicionar duas cadeiras e os seus respetivos professores</paragrafos>
+        <paragrafos>De seguida foi utilizado um gerador online de json 200 alunos, fazendo de seguida um script em python para a conversão deste ficheiro json em ttl.</paragrafos>
+        <paragrafos>No final a utilização do Reasoner do prógete de modo a obter a ontologia com os axiomas inferidos</paragrafos>
+    </resumo>
+    <deliverables>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC1/alunos.json"></link>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC1/alunos.ttl"></link>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC1/json2ttl.py"></link>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC1/uc-final.ttl"></link>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC1/pr.xml"></link>
+    </deliverables>
+</project>
