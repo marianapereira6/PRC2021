@@ -1,0 +1,150 @@
+@prefix : <http://www.di.uminho.pt/prc2021/arq-musical-v1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.di.uminho.pt/prc2021/arq-musical-v1> .
+
+<http://www.di.uminho.pt/prc2021/arq-musical-v1> rdf:type owl:Ontology ;
+                                                  rdfs:comment "Ontologia sobre Arquivos Musicais Digital" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#compos
+<http://www.di.uminho.pt/prc2021/arq-musical#compos> rdf:type owl:ObjectProperty ;
+                                                     owl:inverseOf <http://www.di.uminho.pt/prc2021/arq-musical#foiComposta> ;
+                                                     rdfs:domain <http://www.di.uminho.pt/prc2021/arq-musical#Compositor> ;
+                                                     rdfs:range <http://www.di.uminho.pt/prc2021/arq-musical#Obra> .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#foiComposta
+<http://www.di.uminho.pt/prc2021/arq-musical#foiComposta> rdf:type owl:ObjectProperty .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#temUma
+<http://www.di.uminho.pt/prc2021/arq-musical#temUma> rdf:type owl:ObjectProperty ;
+                                                     owl:inverseOf <http://www.di.uminho.pt/prc2021/arq-musical#éPara> ;
+                                                     rdfs:domain <http://www.di.uminho.pt/prc2021/arq-musical#Instrumento> ;
+                                                     rdfs:range <http://www.di.uminho.pt/prc2021/arq-musical#Partitura> .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#utiliza
+<http://www.di.uminho.pt/prc2021/arq-musical#utiliza> rdf:type owl:ObjectProperty ;
+                                                      owl:inverseOf <http://www.di.uminho.pt/prc2021/arq-musical#éUtilizado> ;
+                                                      rdfs:domain <http://www.di.uminho.pt/prc2021/arq-musical#Obra> ;
+                                                      rdfs:range <http://www.di.uminho.pt/prc2021/arq-musical#Instrumento> .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#éPara
+<http://www.di.uminho.pt/prc2021/arq-musical#éPara> rdf:type owl:ObjectProperty .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#éUtilizado
+<http://www.di.uminho.pt/prc2021/arq-musical#éUtilizado> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#designação
+<http://www.di.uminho.pt/prc2021/arq-musical#designação> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:domain <http://www.di.uminho.pt/prc2021/arq-musical#Instrumento> ;
+                                                         rdfs:range xsd:string .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#nome
+<http://www.di.uminho.pt/prc2021/arq-musical#nome> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://www.di.uminho.pt/prc2021/arq-musical#Compositor> ;
+                                                   rdfs:range xsd:string .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#path
+<http://www.di.uminho.pt/prc2021/arq-musical#path> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://www.di.uminho.pt/prc2021/arq-musical#Partitura> ;
+                                                   rdfs:range xsd:string .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#tipo
+<http://www.di.uminho.pt/prc2021/arq-musical#tipo> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://www.di.uminho.pt/prc2021/arq-musical#Obra> .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#titulo
+<http://www.di.uminho.pt/prc2021/arq-musical#titulo> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <http://www.di.uminho.pt/prc2021/arq-musical#Obra> ;
+                                                     rdfs:range xsd:string .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#type
+<http://www.di.uminho.pt/prc2021/arq-musical#type> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://www.di.uminho.pt/prc2021/arq-musical#Partitura> ;
+                                                   rdfs:range xsd:string .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#voz
+<http://www.di.uminho.pt/prc2021/arq-musical#voz> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <http://www.di.uminho.pt/prc2021/arq-musical#Partitura> ;
+                                                  rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#Compositor
+<http://www.di.uminho.pt/prc2021/arq-musical#Compositor> rdf:type owl:Class .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#Instrumento
+<http://www.di.uminho.pt/prc2021/arq-musical#Instrumento> rdf:type owl:Class .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#Obra
+<http://www.di.uminho.pt/prc2021/arq-musical#Obra> rdf:type owl:Class .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#Partitura
+<http://www.di.uminho.pt/prc2021/arq-musical#Partitura> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#Ilídio_Costa
+<http://www.di.uminho.pt/prc2021/arq-musical#Ilídio_Costa> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.di.uminho.pt/prc2021/arq-musical#Compositor> ;
+                                                           <http://www.di.uminho.pt/prc2021/arq-musical#compos> <http://www.di.uminho.pt/prc2021/arq-musical#m1> ;
+                                                           <http://www.di.uminho.pt/prc2021/arq-musical#nome> "Ilídio Costa" .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#Maestro_m1
+<http://www.di.uminho.pt/prc2021/arq-musical#Maestro_m1> rdf:type owl:NamedIndividual ,
+                                                                  <http://www.di.uminho.pt/prc2021/arq-musical#Instrumento> ;
+                                                         <http://www.di.uminho.pt/prc2021/arq-musical#temUma> <http://www.di.uminho.pt/prc2021/arq-musical#partitura_HomenagemJSerra-maestro.pdf> ;
+                                                         <http://www.di.uminho.pt/prc2021/arq-musical#éUtilizado> <http://www.di.uminho.pt/prc2021/arq-musical#m1> ;
+                                                         <http://www.di.uminho.pt/prc2021/arq-musical#designação> "Maestro" .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#m1
+<http://www.di.uminho.pt/prc2021/arq-musical#m1> rdf:type owl:NamedIndividual ,
+                                                          <http://www.di.uminho.pt/prc2021/arq-musical#Obra> ;
+                                                 <http://www.di.uminho.pt/prc2021/arq-musical#foiComposta> <http://www.di.uminho.pt/prc2021/arq-musical#Ilídio_Costa> ;
+                                                 <http://www.di.uminho.pt/prc2021/arq-musical#utiliza> <http://www.di.uminho.pt/prc2021/arq-musical#Maestro_m1> ;
+                                                 <http://www.di.uminho.pt/prc2021/arq-musical#tipo> "Marcha de Desfile" ;
+                                                 <http://www.di.uminho.pt/prc2021/arq-musical#titulo> "Homenagem a J. Serra" .
+
+
+###  http://www.di.uminho.pt/prc2021/arq-musical#partitura_HomenagemJSerra-maestro.pdf
+<http://www.di.uminho.pt/prc2021/arq-musical#partitura_HomenagemJSerra-maestro.pdf> rdf:type owl:NamedIndividual ,
+                                                                                             <http://www.di.uminho.pt/prc2021/arq-musical#Partitura> ;
+                                                                                    <http://www.di.uminho.pt/prc2021/arq-musical#éPara> <http://www.di.uminho.pt/prc2021/arq-musical#Maestro_m1> ;
+                                                                                    <http://www.di.uminho.pt/prc2021/arq-musical#path> "HomenagemJSerra-maestro.pdf" ;
+                                                                                    <http://www.di.uminho.pt/prc2021/arq-musical#type> "PDF" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

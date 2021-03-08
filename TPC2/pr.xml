@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "../2%20aula/pr.dtd">
+<project>
+    <dados>
+        <key_nome>TP1</key_nome>
+        <titulo>XSL de xml to ttl</titulo>
+        <begin_date>01/03/21</begin_date>
+        <end_date>08/03/21</end_date>
+        <supervisor href="http://www4.di.uminho.pt/~jcr/">José Carlos Ramalho></supervisor>
+    </dados>
+    <workteam>
+        <pessoas>
+            <nome>Mariana de Oliveira Pereira</nome>
+            <numero>A81146</numero>
+            <email>a81146@alunos.uminho.pt</email>
+        </pessoas>
+    </workteam>
+    <resumo>
+        <paragrafos>Para a realização deste TPC2 começou-se por gerar a ontologia do arquivo de musicas com as seguites classes: Obra, Compositor, Instrumento e Partitura</paragrafos>
+        <paragrafos>Depois da ontologia estar completa com as suas respetivas data properties e object properties adicionou-se um elemento de cada classe.</paragrafos>
+        <paragrafos>Em seguinda criou-se uma xsl para transformar o xml dado em um ttl com as caracteristicas definidas</paragrafos>
+        <paragrafos>No final apos a geração do xml em ttl, prossegiu-se a utilização do Reasoner do prógete de modo a obter a ontologia com os axiomas inferidos</paragrafos>
+    </resumo>
+    <deliverables>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC2/arq-musical-v1.ttl"></link>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC2/arq-musical-final.ttl"></link>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC2/aarquivo-musica-digital.ttl"></link>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC2/aarquivo-musica-digital.xml"></link>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC2/xml2tll.xsl"></link>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC2/pr.xml"></link>
+    </deliverables>
+</project>
