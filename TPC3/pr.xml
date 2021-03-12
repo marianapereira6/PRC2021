@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "../2%20aula/pr.dtd">
+<project>
+    <dados>
+        <key_nome>TP3</key_nome>
+        <titulo>XSL de xml to ttl</titulo>
+        <begin_date>08/03/21</begin_date>
+        <end_date>15/03/21</end_date>
+        <supervisor href="http://www4.di.uminho.pt/~jcr/">José Carlos Ramalho></supervisor>
+    </dados>
+    <workteam>
+        <pessoas>
+            <nome>Mariana de Oliveira Pereira</nome>
+            <numero>A81146</numero>
+            <email>a81146@alunos.uminho.pt</email>
+        </pessoas>
+    </workteam>
+    <resumo>
+        <paragrafos>Para a realização deste TPC3 foi criado um projeto em Nextjs. Sendo necessário fazer <i>npm i</i> e para correr <i> npm run dev</i></paragrafos>
+        <paragrafos>Em seguida criou-se a estrutura para responder a informação que era pedida.</paragrafos>
+        <paragrafos>Criou-se Sparql queries para obter a informação.</paragrafos>
+    </resumo>
+    <deliverables>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC3/graphDB"></link>
+        <link href="https://github.com/marianapereira6/PRC2021/blob/main/TPC3/pr.xml"></link>
+    </deliverables>
+</project>

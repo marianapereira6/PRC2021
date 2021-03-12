@@ -1,0 +1,12 @@
+.bgWrap {
+  position: fixed;
+  height: 200vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.layout {
+  background-color: green;
+  position: relative;
+}
