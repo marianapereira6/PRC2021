@@ -1,26 +1,38 @@
 
 
-3. a)
+3. a) 26790
 PREFIX f:<http://www.di.uminho.pt/prc2021/cinema#>
 
 SELECT (count(distinct ?filme) as ?numFilmes) WHERE { 
 	?filme a f:Filme .
 }
 
-b)
+b) 292
 SELECT (count(distinct ?filme) as ?numFilmes) WHERE { 
 	?filme a f:Filme .
     ?filme f:year 1994 .
 }
 
-c) Quantos filmes de Dan Aykroyd?
+c) Quantos filmes de Dan Aykroyd? 41
 SELECT (count(distinct ?filme) as ?numFilmes) WHERE { 
 	?filme a f:Filme .
     ?filme f:temAtor ?ator .
-    ?ator f:name "Dan Aykroyd"
+    ?ator f:name "Dan_Aykroyd"
 }
 
 d) Quantos filmes por ano?
+[1942 - 358,1948 - 421,2013 - 376,1985 - 187,2001 - 226,2018 - 236,1945 - 415,1925 - 572,2006 - 425,2012 - 295,2017 - 238,
+1905 - 35,1914 - 179,1912 - 44,1951 - 429,1933 - 383,2007 - 304,2011 - 201,1997 - 361,1987 - 283,1921 - 143,1966 - 131,
+1932 - 408,1940 - 385,1946 - 423,1922 - 420,1928 - 437,1953 - 365,1969 - 137,2000 - 213,1975 - 128,1924 - 480,
+1909 - 76,1960 - 162,1937 - 473,1920 - 129,1930 - 361,1977 - 131,1991 - 202,1993 - 204,1959 - 205,1995 - 307,1954 - 251,
+1955 - 268,1970 - 137,1908 - 18,1958 - 281,1943 - 465,1980 - 182,1923 - 391,1939 - 339,1963 - 140,1910 - 26,1938 - 422,
+2009 - 229,1983 - 140,2004 - 239,1998 - 242,1903 - 78,1961 - 150,1931 - 360,1972 - 139,1967 - 127,1988 - 292,1956 - 300,
+1919 - 631,1949 - 351,1929 - 347,1950 - 443,1916 - 144,1973 - 142,1913 - 53,1978 - 134,1964 - 151,1990 - 269,1935 - 446,
+1999 - 221,1947 - 390,1989 - 261,1957 - 334,1936 - 504,1996 - 363,1904 - 25,1992 - 224,1944 - 456,1986 - 192,1984 - 167,
+1915 - 109,1979 - 139,1918 - 128,1962 - 144,1952 - 373,1934 - 407,1901 - 80,1971 - 145,2003 - 221,2014 - 214,1926 - 490,
+1965 - 128,2005 - 228,2016 - 143,1917 - 97,1927 - 169,2010 - 210,1968 - 143,1994 - 292,1941 - 358,2015 - 130,1976 - 149,
+1911 - 28,1906 - 7,1974 - 132,2002 - 232,1981 - 140,1900 - 17,1982 - 142,2008 - 206,1907 - 7,1902 - 7]
+
 SELECT ?ano (count(distinct ?filme) as ?numFilmes) WHERE { 
 	?filme a f:Filme .
     ?filme f:year ?ano .
@@ -28,13 +40,25 @@ SELECT ?ano (count(distinct ?filme) as ?numFilmes) WHERE {
 group by ?ano
 
 e) Quantos filmes por genero?
+[Comedy-7114, Animated-748, Science_Fiction-766, Adventure-952, Drama-8352, Thriller-856, Biography-432, 
+Musical-1137, War-548, Action-1085, Western-2874, Short-354, Horror-1116, Documentary-526, Romance-1132, 
+Crime-1464, Noir-399, Historical-105, Fantasy-315, Family-376, Mystery-619, Satire-58, Spy-70, Sports-139, 
+Suspense-111, Political-13, Martial_Arts-21, Disaster-32, Slasher-15, Superhero-83, Teen-20, Performance-22, 
+Erotic-35, Silent-7, Dance-14, Sport-8, Supernatural-11, Live_Action-9, Independent-2, Legal-1, Found_Footage-1]
+
 SELECT ?genero (count(distinct ?filme) as ?numFilmes) WHERE { 
 	?filme a f:Filme .
-    ?ator f:temGenero ?genero .
+    ?filme f:temGenero ?genero .
 }
 group by ?genero
 
-f) Filmes do Keanu Reeves
+f) Quais os títulos dos filmes, em ordem alfabética, que têm a participação de Keanu Reeves?
+[47_Ronin,A_Scanner_Darkly,A_Walk_in_the_Clouds,Bill_&_Ted's_Bogus_Journey,Bill_&_Ted's_Excellent_Adventure,Bram_Stoker's_Dracula,Chain_Reaction
+Constantine,Dangerous_Liaisons,Destination_Wedding,Even_Cowgirls_Get_the_Blues,Feeling_Minnesota,Hardball,I_Love_You_to_Death,John_Wick:_Chapter_2,
+Johnny_Mnemonic,Little_Buddha,Much_Ado_About_Nothing,My_Own_Private_Idaho,Parenthood,Permanent_Record,Point_Break,River's_Edge,Something's_Gotta_Give,
+Speed,Street_Kings,Sweet_November,The_Bad_Batch,The_Day_the_Earth_Stood_Still,The_Devil's_Advocate,The_Gift,The_Lake_House,The_Last_Time_I_Committed_Suicide,The_Matrix
+The_Matrix_Reloaded,The_Matrix_Revolutions,The_Night_Before,The_Prince_of_Pennsylvania,The_Private_Lives_of_Pippa_Lee,The_Replacements,The_Watcher,Thumbsucker,Tune_in_Tomorrow,Youngblood]
+
 SELECT ?filme WHERE { 
 	?f a f:Filme .
     ?f f:temAtor ?ator .
@@ -43,3 +67,5 @@ SELECT ?filme WHERE {
 }
 
 order by ?filme
+
+

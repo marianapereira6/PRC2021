@@ -46,7 +46,6 @@ Cinema.getLista = async function(){
 
 
 Cinema.getFilmesAno = async function(ano){
-    
     var query = `SELECT ?titulo  WHERE { 
         ?filme a f:Filme .
         ?filme f:year ${ano} .
