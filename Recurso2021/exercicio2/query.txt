@@ -1,0 +1,116 @@
+Exercicio 2
+
+Parte 1
+
+1.Tios
+PREFIX fam:<http://prc.di.uminho.pt/2021/myfamily#>
+
+INSERT DATA {
+    fam:temTio rdf:type owl:ObjectProperty .
+}
+
+construct{
+	?pessoa fam:temTio ?tio .
+}
+where {
+    ?tio a fam:Pessoa .
+	?pessoa a fam:Pessoa.
+	?pessoa fam:temProgenitor ?prog.
+    ?prog fam:temProgenitor ?avo .
+    ?avo fam:eProgenitorDe ?tio .
+ 	filter(?tio != ?prog)
+}
+
+2. Trisavo
+
+INSERT DATA {
+    fam:temTrisavo rdf:type owl:ObjectProperty .
+}
+
+construct {
+    ?pessoa fam:temTrisavo ?trisavo .
+}
+where {
+    ?pessoa a fam:Pessoa .
+    ?trisavo a fam:Pessoa .
+    ?pessoa fam:temProgenitor ?prog .
+    ?prog fam:temProgenitor ?avo .
+    ?avo fam:temProgenitor ?bisavo .
+    ?bisavo fam:temProgenitor ?trisavo .
+}
+
+3. Ascendentes
+
+INSERT DATA {
+    fam:temAscendente rdf:type owl:ObjectProperty .
+}
+
+construct {
+    ?pessoa fam:temAscendente ?ascendente .
+}
+where {
+    ?ascendente a f:Pessoa .
+    ?pessoa a fam:Pessoa .
+    ?pessoa fam:temProgenitor+ ?ascendente . 
+}
+
+4. Meio Irmao
+
+INSERT DATA {
+    fam:temMeioIrmao rdf:type owl:ObjectProperty .
+}
+
+construct{
+	?irmao1 fam:temMeioIrmao ?irmao2.
+    ?irmao2 fam:temMeioIrmao ?irmao1.
+}
+where {
+    ?irmao1 a fam:Pessoa.
+    ?irmao2 a fam:Pessoa.
+	?irmao1 fam:temPai ?pai1. 
+    ?irmao1 fam:temMae ?mae1. 
+    ?irmao2 fam:temPai ?pai2. 
+    ?irmao2 fam:temMae ?mae2.
+    {filter(?mae1 != ?mae2) .
+    filter(?pai1 = ?pai2) .}
+        union
+    {filter(?mae1 = ?mae2) .
+     filter(?pai1 != ?pai2) .}            
+    filter(?irmao1 != ?irmao2).
+}
+
+5. 
+INSERT DATA {
+    fam:sexo rdf:type owl:ObjectProperty .
+    fam:Feminino rdf:type owl:Class .
+    fam:Masculino rdf:type owl:Class .
+}
+
+construct{
+	?mulher fam:sexo fam:Feminino.
+    ?homem fam:sexo fam:Masculino.
+}
+where {
+    ?homem a fam:Pessoa.
+    ?mulher a fam:Pessoa.
+    ?pessoa a fam:Pessoa .
+    ?filho fam:temMae ?mulher.
+	?filho fam:temPai ?homem. 
+}
+
+6.
+
+construct{
+    f:José_Carlos_Leite_Ramalho_1967 f:temRelacaoCom ?individuo .
+}
+where {
+?individuo a f:Pessoa .
+   {
+       f:José_Carlos_Leite_Ramalho_1967  f:temAscendente ?individuo .
+   } UNION {
+       f:José_Carlos_Leite_Ramalho_1967  f:eProgenitorDe ?individuo .
+   } UNION {
+       f:José_Carlos_Leite_Ramalho_1967  f:temTio ?individuo .
+   }
+   
+}

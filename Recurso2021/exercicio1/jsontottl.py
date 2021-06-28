@@ -13,7 +13,7 @@ with open('movies.json',"r", encoding='utf8') as f:
             print(f'###  http://www.di.uminho.pt/prc2021/cinema#{c.replace(" ","_")}')
             print(f'<http://www.di.uminho.pt/prc2021/cinema#{c.replace(" ","_")}> rdf:type owl:NamedIndividual ,')
             print(f'            <http://www.di.uminho.pt/prc2021/cinema#Ator> ;')
-            print(f'        <http://www.di.uminho.pt/prc2021/cinema#name> "{c}" .')
+            print(f'        <http://www.di.uminho.pt/prc2021/cinema#name> "{c.replace(r"\"","")}" .')
 
 
 
